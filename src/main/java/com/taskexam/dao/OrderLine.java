@@ -1,17 +1,17 @@
 package com.taskexam.dao;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
+import javax.persistence.*;
 
 @Entity
 public class OrderLine extends BaseIdentity {
 
-    @JoinColumn(name = "orders_id")
-    private long order_id;
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "order_id")
+    private Order order;
 
+    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "goods_id")
-    private long goods_id;
+    private Goods goods;
 
     @Column(nullable = false)
     private int count;

@@ -5,7 +5,7 @@ import javax.persistence.Entity;
 import java.time.LocalDate;
 
 @Entity
-public class Orders extends BaseIdentity {
+public class Order extends BaseIdentity {
     @Column(nullable = false)
     private String client;
 
