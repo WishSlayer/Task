@@ -1,10 +1,11 @@
 plugins {
-    id 'java'
+    id 'war'
     id 'org.springframework.boot' version '2.2.6.RELEASE'
 }
 
 apply plugin: 'war'
 apply plugin: 'idea'
+apply plugin: 'java'
 apply plugin: 'io.spring.dependency-management'
 
 group 'com.taskexam'
@@ -17,8 +18,13 @@ repositories {
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
-    compile('org.springframework.boot:spring-boot-starter',
+    compile('org.springframework.boot:spring-boot-starter-test',
             'org.springframework.boot:spring-boot-starter-web',
             'org.springframework.boot:spring-boot-starter-data-jpa')
     runtime("com.h2database:h2:1.4.200")
+
+}
+
+war {
+    archiveName 'warFile.war'
 }
