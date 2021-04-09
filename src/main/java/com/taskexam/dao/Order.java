@@ -38,4 +38,5 @@ public class Order extends BaseIdentity {
     public void setAddress(String address) {
         this.address = address;
     }
+
 }
